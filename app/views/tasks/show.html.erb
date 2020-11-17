@@ -1,0 +1,18 @@
+<%= link_to "Back", tasks_path %>
+<%= link_to"Edit", edit_task_path(@task) %>
+<%= link_to "Delete #{@task.title}",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+
+
+<h1> TODO LIST</h1>
+<p> <%= @task.title %> </p>
+<p> <%= @task.details %> </p>
+<% if @task.completed == true %>
+<input type="checkbox" checked="checked" >
+<span>Your task is completed</span>
+<% else %>
+<input type="checkbox">
+<span>Your task is not completed</span>
+<% end %>
